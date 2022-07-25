@@ -1,0 +1,2 @@
+"success","error_code","error_type","error_info"
+"false","302","invalid_date","You have entered an invalid date. [Required format: date=YYYY-MM-DD]"
