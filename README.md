@@ -6,6 +6,25 @@
 
 See https://developers.keboola.com/extend/component/processors/
 
+Example:
+```json
+{
+  "parameters": {
+    // generic extractor configuration parameters for Fixer API
+  },
+  "processors": {
+    "after": [
+      {
+        "definition": {
+          "component": "keboola.processor-fixer-api-error-handling"
+        },
+        "parameters": {}
+      }
+    ]
+  }
+}
+```
+
 ## Development
  
 Clone this repository and init the workspace with following command:
