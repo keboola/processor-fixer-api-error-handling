@@ -1,18 +1,37 @@
 # Processor for handling errors from Fixer API
 
-> Fill in description
+> Processor is meant to be used after extractor for Fixer API. Fixer API returns status code 200 even if error and actual error code and message is in response body. This processor should fail with that message if error in response body is found.
 
 # Usage
 
-> fill in usage instructions
+See https://developers.keboola.com/extend/component/processors/
+
+Example:
+```json
+{
+  "parameters": {
+    // generic extractor configuration parameters for Fixer API
+  },
+  "processors": {
+    "after": [
+      {
+        "definition": {
+          "component": "keboola.processor-fixer-api-error-handling"
+        },
+        "parameters": {}
+      }
+    ]
+  }
+}
+```
 
 ## Development
  
 Clone this repository and init the workspace with following command:
 
 ```
-git clone https://github.com/keboola/my-component
-cd my-component
+git clone https://github.com/keboola/processor-fixer-api-error-handling.git
+cd processor-fixer-api-error-handling
 docker-compose build
 docker-compose run --rm dev composer install --no-scripts
 ```
