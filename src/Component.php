@@ -77,9 +77,9 @@ class Component extends BaseComponent
 
             if ($data['error_code'] !== '') {
                 throw new UserException(sprintf(
-                    '%d: Fixer API error "%s": %s',
+                    '%d: Fixer API error%s: %s',
                     $data['error_code'],
-                    $data['error_type'],
+                    isset($data['error_type']) ? sprintf(' "%s"', $data['error_type']) : '',
                     $data['error_info']
                 ));
             }
